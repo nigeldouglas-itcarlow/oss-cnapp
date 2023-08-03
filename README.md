@@ -5,9 +5,22 @@ Documenting the requirements for an open-source CNAPP platform
 ## Create a one-node cluster in EKS
 
 ```
-eksctl create cluster nigel-eks-cluster --node-type t3.xlarge --nodes=1 --nodes-min=0 --nodes-max=3 --max-pods-per-node 58
+eksctl create cluster oss-cnapp --node-type t3.xlarge --nodes=1 --nodes-min=0 --nodes-max=3 --max-pods-per-node 58
 ```
 ![Screenshot 2023-07-11 at 13 16 55](https://github.com/nigeldouglas-itcarlow/falco-tetragon-cncf/assets/126002808/8a4876ac-6d1d-4131-918e-19f64f5dc7e1)
+
+Check status in EKS via Cloudtrail
+
+```
+eksctl get clusters -A
+```
+
+Scales up and down cluster when unneeded/unwanted
+
+```
+eksctl scale nodegroup ...
+```
+
 
 ## Install Falco
 ```
